@@ -1,0 +1,5 @@
+# Project exclude paths
+/qingcheng_common/target/
+/qingcheng_common_service/target/
+/qingcheng_common_web/target/
+/qingcheng_service_goods/target/
