@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 品牌控制层*/
 @RestController
-@RequestMapping(("/brand"))
+@RequestMapping("/brand")
 public class BrandController {
 
     /**
