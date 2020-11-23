@@ -1,13 +1,14 @@
 package com.petrichor.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.petrichor.entity.PageResult;
 import com.petrichor.pojo.goods.Brand;
 import com.petrichor.service.goods.BrandService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 品牌控制层*/
@@ -22,9 +23,20 @@ public class BrandController {
     @Reference
     private BrandService brandService;
 
-    @RequestMapping("/findAll")
+    @RequestMapping("/find-all")
     public List<Brand> findAllBrand(){
 
         return brandService.findAllBrand();
     }
+
+    @GetMapping("/find-by-page")
+    public PageResult<Brand> findBrandByPage(int page, int pageSize){
+        return brandService.findBrandByPage(page,pageSize);
+    }
+
+    @PostMapping("/find-by-conditions")
+    public List<Brand> findByConditions(@RequestBody Map searchMap){
+        return brandService.findBrandByConditions(searchMap);
+    }
+
 }
