@@ -875,3 +875,13 @@
 
 **注：项目启动时先启动service服务模块，在启动web模块**
 
+##  常见错误
+
+### Request processing failed; nested exception is com.alibaba.dubbo.rpc.RpcException: 
+
+该错误可能是由于如下情况引起：
+
+1. 数据库连接失败
+2. 重启zookeeper
+3. 检查序列化
+4. 

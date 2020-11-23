@@ -5,3 +5,4 @@
 /qingcheng_service_goods/target/
 
 *.iml
+*/db.properties
